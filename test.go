@@ -45,16 +45,6 @@ func main() {
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "skdfh ksdf")
-		decoder := json.NewDecoder(r.Body)
-		var p any
-		w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-		w.WriteHeader(http.StatusOK)
-		err = decoder.Decode(&p)
-		if err != nil {
-			fmt.Println("AAAAAAAAAA")
-			panic(err)
-		}
-		fmt.Println(p)
 	})
 
 	router.HandleFunc("/api", func(w http.ResponseWriter, r *http.Request) {
